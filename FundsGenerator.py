@@ -35,3 +35,15 @@ second_time = input("Please enter time of end date in 24 hour format, separated 
 mylist1 = second_time.split(',')
 second_hour = int(mylist1[0])
 second_minute = int(mylist1[1])
+
+
+# Algorithm to find time difference and hours
+first_date = datetime(first_year,first_month,first_day,first_hour,first_minute)
+second_date = datetime(second_year,second_month,second_day,second_hour,second_minute)
+difference_between_datetimes = second_date - first_date
+hours_calculated = difference_between_datetimes.total_seconds()/3600
+total_amount_received = hours_calculated * paid
+currency = "$"
+print('He spent %f %s on a task' % (hours_calculated,'hours'))
+print("\n")
+print('He will receive %s %f' % (currency,total_amount_received))
