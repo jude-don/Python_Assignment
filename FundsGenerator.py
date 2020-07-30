@@ -13,24 +13,24 @@ if answer == Y:
     first_hour = dt.hour
     first_minute = dt.minute
 else:  
-    first_year = input("Please enter year of the start date: \n")
-    first_year = int(first_year)
-    first_month = input("Please enter month of the start date figures from 1-12: \n")
-    first_month = int(first_month)
-    first_day = input("Please enter day of start date: \n")
-    first_day = int(first_day)
+    first_year = int(input("Please enter year of the start date: \n"))
+ 
+    first_month = int(input("Please enter month of the start date figures from 1-12: \n"))
+    
+    first_day = int(input("Please enter day of start date: \n"))
+    
     first_time = input("Please enter time of start date in 24 hour format, separated by commas. For example 12hours 30 minutes as 12,30: \n")
     mylist = first_time.split(',')
     first_hour = int(mylist[0])
     first_minute = int(mylist[1])
 
 # algorithm to obtain end date and time
-second_year = input("Please enter year of the end date: \n")
-second_year = int(second_year)
-second_month = input("Please enter month of the end date figures from 1-12: \n")
-second_month = int(second_month)
-second_day = input("Please enter day of end date: \n")
-second_day = int(second_day)
+second_year = int(input("Please enter year of the end date: \n"))
+
+second_month = int(input("Please enter month of the end date figures from 1-12: \n"))
+
+second_day = int(input("Please enter day of end date: \n"))
+
 second_time = input("Please enter time of end date in 24 hour format, separated by commas. For example 12hours 30 minutes as 12,30: \n")
 mylist1 = second_time.split(',')
 second_hour = int(mylist1[0])
