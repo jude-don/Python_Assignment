@@ -4,7 +4,7 @@ import time
 #INTRO
 username = input("Hi, I'm Elsie, your time and wage manager. What would you like me to call you?\n").title()
 print("Nice to meet you %s!\n" % username)
-print("I will help you know how long you worked on and how much you earned for a task you're about to start or an already completed one.\n") 
+print("I will help you know how long you worked and how much you earned for a task you're about to start or an already completed one.\n") 
 
 PayRate = 5  # signifies 5 dollars per hour
 
@@ -13,6 +13,7 @@ task_name = input("Please enter the name of the task: \n")#specify name to easil
 answer = input("Are you starting now?Please type Y for yes and N for no. I'll start the time if you choose Y \n")#ask if user is starting now
 if answer == "Y" or answer == "y": # allow room for capitalization error
     print("All the best %s! Call out my name when you're done." %username)
+   
     dt = datetime.now()
     first_year = dt.year
     first_month = dt.month
@@ -23,6 +24,10 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
     while True:
         if input() == "Elsie" or "elsie":
             break
+        else:
+            print("Are you referring to me?\nI'm Elsie, call it out when you're done, I'll right here!)
+            continue
+                  
     st = datetime.now()
     second_year = st.year
     second_month = st.month
@@ -32,7 +37,7 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
     
 
 else:
-    print("Oh! you already completed the task? Good work! Hit the enter key and I'll tell you how long you worked and how much you earned.") #any other letter aside y will mean "no"
+    print("Oh! you already completed the task? Great! Hit the enter key and I'll tell you how long you worked and how much you earned.") #any other letter aside y will mean "no"
     first_year = int(input("Please enter year of the start date: \n"))
  
     first_month = int(input("Please enter month of the start date figures from 1-12: \n"))
