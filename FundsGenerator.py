@@ -25,7 +25,7 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
         if input() == "Elsie" or "elsie":
             break
         else:
-            print("Are you referring to me?\nI'm Elsie, call it out when you're done, I'll right here!)
+            print("Are you referring to me?\nThe name is Elsie, call it out when you're done, I'll be right here!")
             continue
                   
     st = datetime.now()
