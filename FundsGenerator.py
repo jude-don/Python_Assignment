@@ -5,7 +5,7 @@ paid = 5  # signifies 5 dollars per hour
 # algorithm to obtain start date and time
 task_name = input("Please enter the name of the task you undergoing: \n")
 answer = input("Do you want to use system time? Please choose Y/N. \n")
-if answer == Y:
+if answer == "Y":
     dt = datetime.now()
     first_year = dt.year
     first_month = dt.month
