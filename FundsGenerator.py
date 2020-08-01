@@ -24,9 +24,6 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
     while True:
         if input() == "Elsie" or "elsie":
             break
-        else:
-            print("Are you referring to me?\nThe name is Elsie, call it out when you're done, I'll be right here!")
-            continue
                   
     st = datetime.now()
     second_year = st.year
@@ -37,7 +34,7 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
     
 
 else:
-    print("Oh! you already completed the task? Great! Hit the enter key and I'll tell you how long you worked and how much you earned.") #any other letter aside y will mean "no"
+    print("Oh! you already completed the task? Great! Hit the enter key and I'll tell you how long you worked and how much you earned.") 
     first_year = int(input("Please enter year of the start date: \n"))
  
     first_month = int(input("Please enter month of the start date figures from 1-12: \n"))
