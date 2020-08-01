@@ -1,7 +1,7 @@
 from datetime import datetime
 import time
 
-username = input("Hi, I'm Elsie, your time and wage manager. What would you like me to call you?\n").title()
+username = input("Hi, I'm Elsie, your time and wage assistant. What would you like me to call you?\n").title()
 print("Nice to meet you %s!\n" %username)
 print("I will help you know how long you worked and how much you earned for a task you're about to start or an already completed one.\n") 
 
@@ -9,9 +9,9 @@ print("I will help you know how long you worked and how much you earned for a ta
 # algorithm to obtain start date and time
 task_name = input("Please enter the name of the task: \n")#specify name to easily identify task.
 PayRate = int(input("Please enter the amount of money paid per hour in figures: \n"))
-answer = input("Are you starting now?Please type Y for yes and N for no. I'll start the time if you choose Y \n")#ask if user is starting now
+answer = input("Are you starting now?Please type Y for yes and N for no. \n")#ask if user is starting now
 if answer == "Y" or answer == "y": # allow room for capitalization error
-    print("All the best %s! Call out my name when you're done." %username)
+    print("All the best %s!" %username)
     # Setting system datetime as start datetime
     dt = datetime.now()
     first_year = dt.year
@@ -24,7 +24,7 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
         if stop_button == "Elsie" or stop_button == "elsie":
             break
         else:
-            print("%s I did not get what you entered, are you trying to end" %username)
+            print("%s are you trying to end" %username)
             continue
 
     #Setting system datetime as end datetime              
@@ -37,7 +37,7 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
     
 
 else:
-    print("Oh! you already completed the task? Please fill the details and I'll tell you how long you worked and how much you earned.\n") 
+    print("For your completed task or fund prediction please fill the details to find out how long you have worked or will work and how much you earned or will earn.\n") 
     first_year = int(input("Please enter year of the start date: \n"))
     first_month = int(input("Please enter month of the start date in figures from 1-12: \n"))
     if first_month == 2 and first_year%4 == 0:
@@ -47,18 +47,18 @@ else:
     elif first_month in [9,4,6,11]:
         first_day = int(input("Please enter day of start date. should be from 1 to 30: \n"))# September, April, June and November have 30 days
     else:
-        first_day = int(input("Please enter day of start date. should be between 1 and 31: \n"))    
-    first_time = input("Please enter time of start date in 24 hour format, separated by a comma. For example 12hours 30 minutes as 12,30: \n")
-    mylist = first_time.split(',')
+        first_day = int(input("Please enter day of start date. should be from 1 to 31: \n"))    
+    first_time = input("Please enter time of start date in 24 hour format, separated by a colon. For example 12hours 30 minutes as 12:30: \n")
+    mylist = first_time.split(':')
     first_hour = int(mylist[0])
     first_minute = int(mylist[1])
 
     # algorithm to obtain end date and time
     second_year = int(input("Please enter year of the end date: \n"))
-    second_month = int(input("Please enter month of the end date in figures from 1-12: \n"))
+    second_month = int(input("Please enter month of the end date in figures from 1 to 12: \n"))
     second_day = int(input("Please enter day of end date: \n"))
-    second_time = input("Please enter time of end date in 24 hour format, separated by a comma. For example 12hours 30 minutes as 12,30: \n")
-    mylist1 = second_time.split(',')
+    second_time = input("Please enter time of end date in 24 hour format, separated by a colon. For example 12hours 30 minutes as 12:30: \n")
+    mylist1 = second_time.split(':')
     second_hour = int(mylist1[0])
     second_minute = int(mylist1[1])
 
@@ -71,9 +71,6 @@ hours_calculated = difference_between_datetimes.total_seconds()/3600
 total_amount_received = hours_calculated * PayRate
 currency = "$"
 print('Great work %s! You spent %f minutes, which is %f %s on the task. And you earned %s%f' % (username,hours_calculated*60,hours_calculated,'hours',currency,total_amount_received))
-print('Your bill is $200')
-time.sleep(2.2)
-print("Don't mind me, I'm just kidding.\n Bye %s, hope to see you soon!" %username)
 
 
 # Converting to an Excel file
@@ -135,3 +132,6 @@ else:
     F3.value = str(hours_calculated)
     G3.value = "$" + str(total_amount_received)
     book.save(filename)
+print('Your bill is $200')
+time.sleep(2.2)
+print("Don't mind me, I'm just kidding.\n Bye %s, hope to see you soon!" %username)
