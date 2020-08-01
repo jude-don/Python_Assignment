@@ -46,7 +46,7 @@ else:
     elif first_month == 2 and first_year%4 != 0:
         first_day = int(input("Please enter day of start date, remember february has 28 days: \n"))#if it's February in a regular year, we'd expect an input a number between 1 and 28
     elif first_month in [9,4,6,11]:
-        first_day = int(input("Please enter day of start date. should be between 1 and 30: \n"))# September, April, June and November have 30 days
+        first_day = int(input("Please enter day of start date. should be from 1 to 30: \n"))# September, April, June and November have 30 days
     else:
         first_day = int(input("Please enter day of start date. should be between 1 and 31: \n"))    
     first_time = input("Please enter time of start date in 24 hour format, separated by a comma. For example 12hours 30 minutes as 12,30: \n")
