@@ -40,3 +40,31 @@ currency = "$"
 print('He spent %f %s on a task' % (hours_calculated,'hours'))
 print("\n")
 print('He will receive %s %f' % (currency,total_amount_received))
+
+# Converting to an Excel file
+workbook = xlsxwriter.Workbook('TaskHistory.xlsx') 
+worksheet = workbook.add_worksheet() 
+  
+#Setting Headers
+worksheet.write('A1', 'TaskName') 
+worksheet.write('B1', 'StartDate') 
+worksheet.write('C1', 'StartTime') 
+worksheet.write('D1', 'EndDate') 
+worksheet.write('E1', 'EndTime') 
+worksheet.write('F1', 'HoursSpent') 
+worksheet.write('G1', 'AmountReceived') 
+
+
+#Pushing date
+worksheet.write('A2', task_name)
+g = str(first_year)+"-"+str(first_month)+"-"+str(first_day)
+worksheet.write('B2',g )  
+h = str(first_hour)+":"+str(first_minute)
+worksheet.write('C2', h) 
+g1 = str(second_year)+"-"+str(second_month)+"-"+str(second_day)
+worksheet.write('D2',g1 )  
+h1 = str(second_hour)+":"+str(second_minute)
+worksheet.write('E2', h1) 
+worksheet.write('F2', str(hours_calculated)) 
+worksheet.write('G2', str(total_amount_received)) 
+workbook.close()
