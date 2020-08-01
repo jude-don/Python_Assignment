@@ -1,0 +1,30 @@
+README
+Overview
+FundsGenerator is a program which aids a user to identify the time spent on executing a project. When the program obtains the duration of a project, it accumulates the money earned by the user by performing an arithmetic operation (multiplying the pay rate by the duration). After the computation, the program writes the details and calculated figures to an excel file. 
+
+Implementation Process
+Part 1
+The program fetches the task name and pay-rate from the user. 
+Then branches either to use the system's start DateTime and system's end DateTime or processes according to user's input for start DateTime and end DateTime. 
+After the program finds the difference between the two datetimes by the help of the DateTime module. The difference in datetimes is called time delta. 
+When the difference is obtained, the time is converted to seconds by the aid of the function called total_seconds and later to hours by multiplying the output by 3600. 
+After the output is multiplied by the pay rate.  And all outputs are printed.
+
+Part 2
+The program writes the outputs and other details to either an existing file or creates a new file depending on the user's choice after the program has finished the main action(Part1).
+
+Input Specification
+Pay-rate, startdate, enddate, username, taskname. All these are strings. 
+
+Output Specification
+total_amount_received, hours_calculated
+
+Constraints
+For the Part2 of the program, it cannot write to a file which was not created by the program.
+
+
+Teamwork 
+Authors: 
+	Jude 
+	Joesph
+	John

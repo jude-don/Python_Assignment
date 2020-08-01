@@ -5,7 +5,6 @@ username = input("Hi, I'm Elsie, your time and wage manager. What would you like
 print("Nice to meet you %s!\n" %username)
 print("I will help you know how long you worked and how much you earned for a task you're about to start or an already completed one.\n") 
 
-# PayRate = 5  # signifies 5 dollars per hour
 
 # algorithm to obtain start date and time
 task_name = input("Please enter the name of the task: \n")#specify name to easily identify task.
