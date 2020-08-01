@@ -1,6 +1,25 @@
 from datetime import datetime
 import time
 
+######################################################################################################################
+# function to find time difference and hours
+def amount():
+    first_date = datetime(first_year,first_month,first_day,first_hour,first_minute)
+
+    second_date = datetime(second_year,second_month,second_day,second_hour,second_minute)
+
+    difference_between_datetimes = second_date - first_date
+    hours_calculated = difference_between_datetimes.total_seconds()/3600
+    total_amount_received = hours_calculated * PayRate
+    currency = "$"
+    print('Great work %s! You spent %f minutes, which is %f %s on the task. And you earned %s%f\n' % (username,hours_calculated*60,hours_calculated,'hours',currency,total_amount_received))
+    print('Your bill is $200')
+    time.sleep(5)
+    print("Don't mind me, I'm just kidding.\nBye %s, hope to see you soon!" %username)
+#end of function
+#######################################################################################################################    
+
+
 username = input("Hi, I'm Elsie, your time and wage assistant. What would you like me to call you?\n").title()
 print("Nice to meet you %s!\n" %username)
 print("I will help you know how long you worked and how much you earned for a task you're about to start or an already completed one.\n") 
@@ -35,6 +54,7 @@ if answer == "Y" or answer == "y": # allow room for capitalization error
     second_hour = st.hour
     second_minute = st.minute
     
+    amount()
 else:
     print("Oh! you already completed the task? Good work!\nI'll tell you how long you worked and how much you earned.")
 
@@ -145,23 +165,10 @@ else:
         mylist1 = second_time.split(',')
         second_hour = int(mylist1[0])
         second_minute = int(mylist1[1])
-
+        amount()
     except IndexError:
         print("You entered an invalid input")
 
-# Algorithm to find time difference and hours
-first_date = datetime(first_year,first_month,first_day,first_hour,first_minute)
-
-second_date = datetime(second_year,second_month,second_day,second_hour,second_minute)
-
-difference_between_datetimes = second_date - first_date
-hours_calculated = difference_between_datetimes.total_seconds()/3600
-total_amount_received = hours_calculated * PayRate
-currency = "$"
-print('Great work %s! You spent %f minutes, which is %f %s on the task. And you earned %s%f\n' % (username,hours_calculated*60,hours_calculated,'hours',currency,total_amount_received))
-print('Your bill is $200')
-time.sleep(5)
-print("Don't mind me, I'm just kidding.\nBye %s, hope to see you soon!" %username)
 
 
 # Converting to an Excel file
